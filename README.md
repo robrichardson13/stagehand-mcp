@@ -32,7 +32,7 @@ Add to your MCP client configuration:
 
 ### Arguments
 
-- `--modelName` - Override the default model (default: "openai/gpt-4o-mini")
+- `--modelName` - Override the default model (default: "openai/gpt-4.1-mini")
 - `--modelApiKey` - Override the API key (default: OPENAI_API_KEY env var)  
 - `--executablePath` - Override browser executable path
 - `--headless` - Run in headless mode

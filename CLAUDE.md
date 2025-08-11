@@ -17,7 +17,7 @@ This is an MCP (Model Context Protocol) server that exposes Stagehand browser au
 
 ### CLI Arguments
 The server accepts the following command-line arguments:
-- `--modelName` - Override the default model (default: "openai/gpt-4o-mini")
+- `--modelName` - Override the default model (default: "openai/gpt-4.1-mini")
 - `--modelApiKey` - Override the API key (default: OPENAI_API_KEY environment variable)
 - `--executablePath` - Override the browser executable path (default: Google Chrome on macOS)
 - `--headless` - Run in headless mode
