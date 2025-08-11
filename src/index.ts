@@ -47,8 +47,7 @@ async function runStdioServer(): Promise<void> {
     }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
-    runStdioServer().catch(error => {
-        process.exit(1)
-    })
-}
+// Run the server when this file is executed directly
+runStdioServer().catch(() => {
+    process.exit(1)
+})
