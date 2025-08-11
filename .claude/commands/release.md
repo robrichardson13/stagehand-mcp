@@ -1,7 +1,7 @@
 ---
 allowed-tools: Bash(npm run build:*), Bash(npm version:*), Bash(git push:*), Bash(npm publish:*)
-argument-hint: "[major|minor|patch]"
-description: "Release a new version to npm"
+argument-hint: '[major|minor|patch]'
+description: 'Release a new version to npm'
 ---
 
 ## Context
@@ -20,8 +20,9 @@ Release a new version using the standard process:
 4. Publish to npm
 
 The version type should be:
+
 - **patch** for bug fixes (1.0.1 → 1.0.2)
-- **minor** for new features (1.0.1 → 1.1.0) 
+- **minor** for new features (1.0.1 → 1.1.0)
 - **major** for breaking changes (1.0.1 → 2.0.0)
 
 Complete all steps and confirm the release was successful.

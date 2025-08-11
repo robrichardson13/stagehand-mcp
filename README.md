@@ -5,7 +5,7 @@ An MCP (Model Context Protocol) server that exposes [Stagehand](https://github.c
 ## Features
 
 - **Browser Automation**: Navigate, click, type, and interact with web pages using natural language
-- **Data Extraction**: Extract structured information from any webpage  
+- **Data Extraction**: Extract structured information from any webpage
 - **Screenshots**: Capture page screenshots as base64 or save to files
 - **Local Browser**: Uses your local Chrome/Chromium installation
 - **AI-Powered**: Leverages OpenAI models for intelligent web interactions
@@ -18,22 +18,22 @@ Add to your MCP client configuration:
 
 ```json
 {
-  "mcpServers": {
-    "stagehand": {
-      "command": "npx",
-      "args": ["stagehand-mcp"],
-      "env": {
-        "OPENAI_API_KEY": "your-openai-api-key"
-      }
+    "mcpServers": {
+        "stagehand": {
+            "command": "npx",
+            "args": ["stagehand-mcp"],
+            "env": {
+                "OPENAI_API_KEY": "your-openai-api-key"
+            }
+        }
     }
-  }
 }
 ```
 
 ### Arguments
 
 - `--modelName` - Override the default model (default: "openai/gpt-4.1-mini")
-- `--modelApiKey` - Override the API key (default: OPENAI_API_KEY env var)  
+- `--modelApiKey` - Override the API key (default: OPENAI_API_KEY env var)
 - `--executablePath` - Override browser executable path
 - `--headless` - Run in headless mode
 

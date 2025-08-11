@@ -4,7 +4,13 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { StagehandMCPServer } from './stagehand-server.js'
 
 function parseArgs(args: string[]) {
-    const config: { modelName?: string; modelApiKey?: string; executablePath?: string; headless?: boolean } = {}
+    const config: {
+        modelName?: string
+        modelApiKey?: string
+        executablePath?: string
+        headless?: boolean
+        cdpUrl?: string
+    } = {}
 
     for (let i = 0; i < args.length; i++) {
         if (args[i] === '--modelName' && i + 1 < args.length) {
@@ -18,6 +24,9 @@ function parseArgs(args: string[]) {
             i++
         } else if (args[i] === '--headless') {
             config.headless = true
+        } else if (args[i] === '--cdpUrl' && i + 1 < args.length) {
+            config.cdpUrl = args[i + 1]
+            i++
         }
     }
 

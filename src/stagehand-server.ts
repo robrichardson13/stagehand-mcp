@@ -8,6 +8,7 @@ interface StagehandConfig {
     modelApiKey?: string
     executablePath?: string
     headless?: boolean
+    cdpUrl?: string
 }
 
 export class StagehandMCPServer {
@@ -66,8 +67,9 @@ export class StagehandMCPServer {
         this.config = {
             modelName: 'openai/gpt-4.1-mini',
             modelApiKey: process.env.OPENAI_API_KEY,
-            executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+            executablePath: undefined,
             headless: false,
+            cdpUrl: undefined,
             ...config,
         }
 
@@ -91,6 +93,7 @@ export class StagehandMCPServer {
             localBrowserLaunchOptions: {
                 executablePath: this.config.executablePath,
                 headless: this.config.headless,
+                cdpUrl: this.config.cdpUrl,
             },
         })
 
@@ -173,8 +176,8 @@ export class StagehandMCPServer {
                 const result = schema
                     ? await this.stagehand.page.extract({ instruction, schema: this.convertJsonToZodSchema(schema) })
                     : instruction
-                    ? await this.stagehand.page.extract(instruction)
-                    : await this.stagehand.page.extract()
+                      ? await this.stagehand.page.extract(instruction)
+                      : await this.stagehand.page.extract()
 
                 return {
                     content: [

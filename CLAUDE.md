@@ -9,6 +9,7 @@ This is an MCP (Model Context Protocol) server that exposes Stagehand browser au
 ## Key Commands
 
 ### Development Commands
+
 - `npm run build` - Compile TypeScript to JavaScript in dist/ directory
 - `npm run dev` - Run TypeScript compiler in watch mode for development
 - `npm run clean` - Remove the dist/ directory
@@ -16,13 +17,16 @@ This is an MCP (Model Context Protocol) server that exposes Stagehand browser au
 - `npm run inspector` - Launch the MCP Inspector for testing and debugging
 
 ### CLI Arguments
+
 The server accepts the following command-line arguments:
+
 - `--modelName` - Override the default model (default: "openai/gpt-4.1-mini")
 - `--modelApiKey` - Override the API key (default: OPENAI_API_KEY environment variable)
 - `--executablePath` - Override the browser executable path (default: Google Chrome on macOS)
 - `--headless` - Run in headless mode
 
 ### Testing and Debugging
+
 - Use `npm run inspector` to test the MCP server with the official MCP Inspector tool
 - The server uses stdio transport for command-line integration
 
@@ -31,15 +35,18 @@ The server accepts the following command-line arguments:
 ### Core Components
 
 **StagehandMCPServer** (`src/stagehand-server.ts`):
+
 - Main MCP server implementation that wraps Stagehand functionality
 - Manages Stagehand instance lifecycle with lazy initialization
 - Handles cleanup and error management
 - Exposes 5 core tools: navigate, act, extract, observe, screenshot
 
 **Transport Layer**:
+
 - `src/index.ts` - stdio transport entry point with CLI argument parsing and graceful shutdown
 
 **Type Definitions** (`src/types.ts`):
+
 - Zod schemas with detailed descriptions for input validation of all tools
 - TypeScript type definitions for all tool inputs
 - Support for optional parameters with sensible defaults
@@ -57,12 +64,14 @@ The server accepts the following command-line arguments:
 The server is configured to use LOCAL mode with a local browser installation.
 
 **Default Configuration:**
+
 - Model: `openai/gpt-4.1-mini`
 - Browser: Google Chrome (macOS path)
 - Headless: `false` (visual browser window)
 - API Key: `OPENAI_API_KEY` environment variable
 
 **CLI Override Options:**
+
 - `--modelName` - Change the AI model
 - `--modelApiKey` - Override API key
 - `--executablePath` - Use different browser executable
