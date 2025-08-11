@@ -179,6 +179,21 @@ export class StagehandMCPServer {
                       ? await this.stagehand.page.extract(instruction)
                       : await this.stagehand.page.extract()
 
+                if (schema) {
+                    return {
+                        content: [
+                            {
+                                type: 'text',
+                                text: JSON.stringify({
+                                    success: true,
+                                    message: 'Data extracted successfully',
+                                    data: result
+                                }, null, 2),
+                            },
+                        ],
+                    }
+                }
+
                 return {
                     content: [
                         {

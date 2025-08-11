@@ -63,3 +63,6 @@ chrome-user-data/
 tmp/
 temp/
 downloads/
+
+# Local scripts
+inspect.sh
