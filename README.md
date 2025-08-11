@@ -12,13 +12,6 @@ An MCP (Model Context Protocol) server that exposes [Stagehand](https://github.c
 
 ## Installation
 
-```bash
-npm install
-npm run build
-```
-
-## Usage
-
 ### MCP Configuration
 
 Add to your MCP client configuration:
@@ -27,8 +20,8 @@ Add to your MCP client configuration:
 {
   "mcpServers": {
     "stagehand": {
-      "command": "node",
-      "args": ["/path/to/stagehand-mcp/dist/index.js"],
+      "command": "npx",
+      "args": ["stagehand-mcp"],
       "env": {
         "OPENAI_API_KEY": "your-openai-api-key"
       }
@@ -37,7 +30,7 @@ Add to your MCP client configuration:
 }
 ```
 
-### Command Line Options
+### Arguments
 
 - `--modelName` - Override the default model (default: "openai/gpt-4o-mini")
 - `--modelApiKey` - Override the API key (default: OPENAI_API_KEY env var)  

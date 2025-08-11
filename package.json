@@ -4,6 +4,9 @@
     "description": "MCP server that exposes Stagehand browser automation capabilities",
     "main": "dist/index.js",
     "type": "module",
+    "bin": {
+        "stagehand-mcp": "dist/index.js"
+    },
     "scripts": {
         "build": "tsc",
         "start": "node dist/index.js",
@@ -29,6 +32,14 @@
         "ai",
         "model-context-protocol"
     ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/robrichardson13/stagehand-mcp.git"
+    },
+    "bugs": {
+        "url": "https://github.com/robrichardson13/stagehand-mcp/issues"
+    },
+    "homepage": "https://github.com/robrichardson13/stagehand-mcp#readme",
     "author": "robrichardson13",
     "license": "MIT",
     "engines": {
