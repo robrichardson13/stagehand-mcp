@@ -1,0 +1,37 @@
+{
+    "name": "stagehand-mcp",
+    "version": "1.0.0",
+    "description": "MCP server that exposes Stagehand browser automation capabilities",
+    "main": "dist/index.js",
+    "type": "module",
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "dev": "tsc --watch",
+        "inspector": "npx @modelcontextprotocol/inspector node dist/index.js",
+        "clean": "rm -rf dist"
+    },
+    "dependencies": {
+        "@browserbasehq/stagehand": "^2.0.0",
+        "@modelcontextprotocol/sdk": "^1.17.2",
+        "express": "^4.21.0",
+        "zod": "^3.23.0"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.0",
+        "@types/node": "^22.0.0",
+        "typescript": "^5.6.0"
+    },
+    "keywords": [
+        "mcp",
+        "stagehand",
+        "browser-automation",
+        "ai",
+        "model-context-protocol"
+    ],
+    "author": "robrichardson13",
+    "license": "MIT",
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}
