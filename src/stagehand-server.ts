@@ -42,7 +42,11 @@ export class StagehandMCPServer {
 
         switch (jsonSchema.type) {
             case 'string':
-                return z.string()
+                const stringSchema = z.string()
+                if (jsonSchema.format === 'uri' || jsonSchema.format === 'url') {
+                    return stringSchema.url()
+                }
+                return stringSchema
             case 'number':
                 return z.number()
             case 'boolean':

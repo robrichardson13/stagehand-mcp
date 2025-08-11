@@ -54,6 +54,72 @@ The server provides 5 core automation tools:
 4. **observe** - Get information about actionable elements
 5. **screenshot** - Capture page screenshots
 
+### Extract Tool Usage
+
+The `extract` tool can extract structured data from web pages using natural language instructions. You can optionally provide a JSON schema to specify the exact structure you want.
+
+#### Basic Usage
+
+```
+Extract all product names and prices from this page
+```
+
+#### Schema-based Extraction
+
+For structured data extraction, provide a JSON schema:
+
+```json
+{
+  "instruction": "extract product information",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "products": {
+        "type": "array",
+        "items": {
+          "type": "object", 
+          "properties": {
+            "name": { "type": "string" },
+            "price": { "type": "string" },
+            "url": { 
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+#### Supported Schema Types
+
+- **string** - Text data
+- **string** with **format: "uri"** or **format: "url"** - URLs/links (validates as proper URLs)
+- **number** - Numeric values
+- **boolean** - True/false values
+- **array** - Lists of items
+- **object** - Nested structures
+
+#### URL/Link Extraction
+
+To extract URLs or links, use the `format: "uri"` specification:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "contactLink": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}
+```
+
+This ensures the extracted value is validated as a proper URL format.
+
 ## License
 
 MIT
