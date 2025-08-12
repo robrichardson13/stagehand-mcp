@@ -24,6 +24,7 @@ The server accepts the following command-line arguments:
 - `--modelApiKey` - Override the API key (default: OPENAI_API_KEY environment variable)
 - `--executablePath` - Override the browser executable path (default: Google Chrome on macOS)
 - `--headless` - Run in headless mode
+- `--cdpUrl` - Connect to an existing browser instance via Chrome DevTools Protocol URL
 
 ### Testing and Debugging
 
@@ -76,6 +77,7 @@ The server is configured to use LOCAL mode with a local browser installation.
 - `--modelApiKey` - Override API key
 - `--executablePath` - Use different browser executable
 - `--headless` - Run in headless mode
+- `--cdpUrl` - Connect to existing browser via CDP URL
 
 ## Code Style and Configuration
 

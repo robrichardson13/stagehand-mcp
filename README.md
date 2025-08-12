@@ -36,6 +36,7 @@ Add to your MCP client configuration:
 - `--modelApiKey` - Override the API key (default: OPENAI_API_KEY env var)
 - `--executablePath` - Override browser executable path
 - `--headless` - Run in headless mode
+- `--cdpUrl` - Connect to an existing browser instance via Chrome DevTools Protocol URL
 
 ### Development
 
