@@ -1,6 +1,6 @@
 {
     "name": "stagehand-mcp",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "MCP server that exposes Stagehand browser automation capabilities",
     "main": "dist/index.js",
     "type": "module",
